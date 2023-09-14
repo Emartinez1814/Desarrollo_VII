@@ -1,7 +1,7 @@
 <?php
 if (is_uploaded_file ($_FILES['nombre_archivo_cliente']['tmp_name']))
     {
-        $nombreDirectorio = "archivos/";
+        $nombreDirectorio = "prueba/";
         $nombrearchivo = $_FILES['nombre_archivo_cliente']['name'];
         $nombreCompleto = $nombreDirectorio . $nombrearchivo;
         if (is_file($nombreCompleto))
