@@ -5,7 +5,7 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Arreglo Unidimensional de 20 Elementos Ingresados</h1>
+<h1>Arreglo Unidimensional de 20 números</h1>
 <?php
 
 $listado = [3,5,11,120,2,4,10,17,15,5,1,8,25,9,53,2,30,40,50,93];
