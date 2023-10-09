@@ -1,19 +1,19 @@
 <?php
 require_once('modelo.php');
 
-class noticias extends modeloCredencialesBD{
+class noticia extends modeloCredencialesBD{
     protected $titulo;
     protected $texto;
     protected $categoria;
     protected $fecha;
     protected $imagen;
 
-    public function_construct(){
-        parent::_construct();
+    public function _construct(){
+        parent:: _construct();
     }
 
     public function consultar_noticias(){
-        $instruccion= "CALL sp_listar_noticias ()";
+        $instruccion= "CALL sp_listar_noticias()";
 
         $consulta = $this->_db->query($instruccion);
         $resultado = $consulta->fetch_all(MYSQLI_ASSOC);
