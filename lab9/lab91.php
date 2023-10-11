@@ -34,7 +34,7 @@ if($nfilas>0){
             print("<td><a target='_blank' href='img/".$resultado['imagen']."'><img border='0' src='img/iconotexto.gif'></a></td>\n");
         }
         else{
-            print("<td>$nbsp</td>\n");
+            print("<td>&nbsp</td>\n");
         }
         print("<tr>\n");
     }
