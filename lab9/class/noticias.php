@@ -13,9 +13,9 @@ class noticia extends modeloCredencialesBD{
     }
 
     public function consultar_noticias(){
-        $instruccion= "CALL sp_listar_noticias()";
-
-        $consulta = $this->_db->query($instruccion);
+        //$instruccion= "CALL sp_listar_noticias()";
+        //$instruccion= "select * from noticias";
+        $consulta = $this->_db->query("select * from noticias");
         $resultado = $consulta->fetch_all(MYSQLI_ASSOC);
 
         if(!$resultado){
