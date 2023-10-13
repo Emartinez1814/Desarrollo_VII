@@ -6,12 +6,21 @@
 
     <body>
         <h1>Consulta de Noticias</h1>
+
 <?php
 require_once ("class/noticias.php");
 
 $obj_noticia = new noticia();
 $noticias = $obj_noticia->consultar_noticias();
 $nfilas = count ($noticias);
+$calculo = new noticia();
+$filas = $calculo->calculo();
+$totalPagina = $calculo->paginaTotal();
+$pagina=1;
+//$cantPagina=3;
+//$totalPagina= ceil($filas/$cantPagina);
+
+print("<span>Mostrando noticias del ".$pagina." al ".$totalPagina." de un total de ".$filas."</span>\n");
 
 if($nfilas>0){
     print("<table>\n");
