@@ -6,6 +6,7 @@
 
     <body>
         <h1>Consulta de Noticias</h1>
+        
 
 <?php
 require_once ("class/noticias.php");
@@ -13,14 +14,17 @@ require_once ("class/noticias.php");
 $obj_noticia = new noticia();
 $noticias = $obj_noticia->consultar_noticias();
 $nfilas = count ($noticias);
-$calculo = new noticia();
-$filas = $calculo->calculo();
-$totalPagina = $calculo->paginaTotal();
-$pagina=1;
-//$cantPagina=3;
-//$totalPagina= ceil($filas/$cantPagina);
+//$calculo = new noticia();
+$filas = $obj_noticia->calculo();//cantidad de filas en el query
+$totalPagina = $obj_noticia->paginaTotal();//cantidad de filas por pagina
+$empezarPagina = ($obj_noticia->empezar() + 1);//numero, por la cual iniciara la pagina
+$enlace = $obj_noticia->paginaInicio();
+//$enlace1 = $obj_noticia->paginaFinal();
+//$enlace = 1;
+//$enlace1 = 2;
 
-print("<span>Mostrando noticias del ".$pagina." al ".$totalPagina." de un total de ".$filas."</span>\n");
+print("<span>Mostrando noticias del ".$empezarPagina." al ".$totalPagina." de un total de ".$filas." ");
+print('<a href="lab111.php?pagina='.$enlace.'">[Anterior |</a><a href="lab111.php?pagina='.$enlace.'">Siguiente ]</a>');
 
 if($nfilas>0){
     print("<table>\n");
