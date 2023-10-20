@@ -14,17 +14,26 @@ require_once ("class/noticias.php");
 $obj_noticia = new noticia();
 $noticias = $obj_noticia->consultar_noticias();
 $nfilas = count ($noticias);
-//$calculo = new noticia();
+//$i = $obj_noticia->paginacion();//cantidad de filas en el query
 $filas = $obj_noticia->calculo();//cantidad de filas en el query
 $totalPagina = $obj_noticia->paginaTotal();//cantidad de filas por pagina
 $empezarPagina = ($obj_noticia->empezar() + 1);//numero, por la cual iniciara la pagina
 $enlace = $obj_noticia->paginaInicio();
-//$enlace1 = $obj_noticia->paginaFinal();
-//$enlace = 1;
-//$enlace1 = 2;
+$cantFilas= $obj_noticia->cantFilas();
 
-print("<span>Mostrando noticias del ".$empezarPagina." al ".$totalPagina." de un total de ".$filas." ");
-print('<a href="lab111.php?pagina='.$enlace.'">[Anterior |</a><a href="lab111.php?pagina='.$enlace.'">Siguiente ]</a>');
+if ($enlace==$totalPagina) {
+    print("<span>Mostrando noticias del ".$empezarPagina." al ".$filas." de un total de ".$filas." ");
+}else {
+    print("<span>Mostrando noticias del ".$empezarPagina." al ".($cantFilas * $enlace)." de un total de ".$filas." ");
+}
+
+if ($enlace ==1) {
+    print('[Anterior |<a href="lab111.php?pagina='.($enlace + 1).'">Siguiente ]</a>');
+}elseif($enlace ==$totalPagina) {
+    print('<a href="lab111.php?pagina='.($enlace - 1).'">[Anterior |</a>Siguiente ]');
+}else {
+    print('<a href="lab111.php?pagina='.($enlace - 1).'">[Anterior |</a><a href="lab111.php?pagina='.($enlace + 1).'">Siguiente ]</a>');
+}
 
 if($nfilas>0){
     print("<table>\n");
