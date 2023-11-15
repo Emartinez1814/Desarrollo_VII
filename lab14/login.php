@@ -46,6 +46,27 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])) {
 </ul>
 <hr>
 <p>[ <a href="logout.php">Desconectar</a> ]</p>
-    
+<?php
+//intento de entrada fallida
+    elseif (isset('usuario')) {
+        print("<br><br>\n");
+        print("<p align='center'>Acceso no autorizado</p>\n");
+        print("<p align='center'>[ <a href="logout.php">Desconectar</a> ]</p>\n");
+    }
+    //Sesion no iniciada
+    else {
+        print("<br><br>\n");
+        print("<p class='parrafocentrado'>Esta zona tiene el acceso restringido.<br>"." Para entrar debe identificarse</p>\n");
+        print("<form class='entrada' name='login' action='login.php' method='post'>\n");
+        print("<p><label class='etiqueta-entrada'>Usuario:</label>\n");
+        print("<input type='text' name='usuario' size='15'></p>\n");
+        print("<p><label class='etiqueta-entrada'>Clave:</label>\n");
+        print("<input type='password' name='clave' size='15'></p>\n");
+        print("<p><input type='submit' value='entrar' size='15'></p>\n");
+        print("</form>\n");
+        print("<p class='parrafocentrado'>NOTA: si no dispone de identificacion o tiene problemas ". 
+        "para entrar<br> pongase en contacto con el ".
+        "<a href='MAILTO:webmaster@localhost'>Administrador</a> del sitio</p>\n");
+    }
 </body>
 </html>
