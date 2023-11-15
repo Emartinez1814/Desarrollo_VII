@@ -13,12 +13,12 @@ session_start();
 <?php
     if (isset($_SESSION['usuario_valido'])) {
         session_destroy();
-        print("<br><br><p align='center'>Conexion finalizada</p>\n"),
-        print("<p align='center'>[ <a href="login.php">Conectar</a> ]</p>\n");
+        print("<br><br><p align='center'>Conexion finalizada</p>\n");
+        print("<p align='center'>[ <a href='login.php'>Conectar</a> ]</p>\n");
     }else {
         print("<br><br>");
-        print("<p align='center'>No existe una conexion finalizada</p>\n"),
-        print("<p align='center'>[ <a href="login.php">Conectar</a> ]</p>\n");
+        print("<p align='center'>No existe una conexion finalizada</p>\n");
+        print("<p align='center'>[ <a href='login.php'>Conectar</a> ]</p>\n");
     }
 ?>  
 </body>

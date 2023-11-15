@@ -1,7 +1,7 @@
 <?php
 require_once('modelo.php');
-class usarios extends modeloCredencialesBD{
-    public function_construct(){
+class usuarios extends modeloCredencialesBD{
+    public function __construct(){
         parent::__construct();
     }
 
