@@ -40,9 +40,9 @@ if (isset($_REQUEST['usuario']) && isset($_REQUEST['clave'])) {
 <h1>Gestion de Noticias</h1>
 <hr>
 <ul>
-    <li><a href="lab42.php">Listar todas las noticias</a></li>
-    <li><a href="lab43.php">Listarnoticias por partes</a></li>
-    <li><a href="lab44.php">Buscar noticias</a></li>
+    <li><a href="lab142.php">Listar todas las noticias</a></li>
+    <li><a href="lab143.php">Listarnoticias por partes</a></li>
+    <li><a href="lab144.php">Buscar noticias</a></li>
 </ul>
 <hr>
 <p>[ <a href="logout.php">Desconectar</a> ]</p>
